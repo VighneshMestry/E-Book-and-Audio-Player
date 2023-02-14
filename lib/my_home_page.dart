@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:audio_player/app_colors.dart' as AppColors;
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -12,8 +13,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: Scaffold(),
+    return Container(
+      color: AppColors.background,
+      child: const SafeArea(
+        child: Scaffold(),
+      ),
     );
   }
 }
