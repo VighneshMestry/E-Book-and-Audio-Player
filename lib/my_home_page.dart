@@ -1,6 +1,6 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:audio_player/app_colors.dart' as AppColors;
 
 class MyHomePage extends StatefulWidget {
@@ -11,6 +11,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  late List popularBooks;
+
+  ReadData() async {
+    await DefaultAssetBundle.of(context).loadString("json/popularBooks.json").then((s) {
+      setState(() {
+        popularBooks = json.decode(s);
+      });
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    ReadData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,9 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               Row(
                 children: [
                   Container(
@@ -51,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   )
                 ],
               ),
+              const SizedBox(height: 20),
               Container(
                 height: 180,
                 child: Stack(
@@ -64,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         // PageView runs in loops
                         child: PageView.builder(
                             controller: PageController(viewportFraction: 0.8),
-                            itemCount: 5,
+                            itemCount: popularBooks.length,
                             itemBuilder: (_, i) {
                               return Container(
                                 height: 180,
@@ -72,9 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                 margin: const EdgeInsets.only(right: 10),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15),
-                                  image: const DecorationImage(
-                                      image: AssetImage(
-                                          "img/think_and_grow_rich.jpg"),
+                                  image: DecorationImage(
+                                      image: AssetImage(popularBooks[i]["img"]),
                                       fit: BoxFit.fill),
                                 ),
                               );

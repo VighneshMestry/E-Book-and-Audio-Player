@@ -1,0 +1,23 @@
+[
+    {
+        "ratings" : "4.5",
+        "title" : "Atomic Habits",
+        "text": "James Clear",
+        "img" : "img/atomic_habits.jpg",
+        "pdf" : "img/atomic_habits.pdf"
+    },
+    {
+        "ratings" : "4.5",
+        "title" : "Think and Grow Rich",
+        "text": "Napoleon Hill",
+        "img" : "img/think_and_grow_rich.jpg",
+        "pdf" : "img/think_and_grow_rich.pdf"
+    },
+    {
+        "ratings" : "4.5",
+        "title" : "Who Moved my cheese?",
+        "text": "Spencer Johnson",
+        "img" : "img/who_move_my_cheese.jpg",
+        "pdf" : "img/who_move_my_cheese.pdf"
+    }
+]
