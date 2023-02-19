@@ -238,12 +238,14 @@ class _MyHomePageState extends State<MyHomePage>
                                                   BorderRadius.circular(3),
                                               color: AppColors.loveColor),
                                           alignment: Alignment.center,
-                                          child: const Text("Love",
-                                              style: TextStyle(
-                                                fontSize: 10,
-                                                fontFamily: "Avenir",
-                                                color: Colors.white,
-                                              )),
+                                          child: const Text(
+                                            "Love",
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontFamily: "Avenir",
+                                              color: Colors.white,
+                                            ),
+                                          ),
                                         )
                                       ],
                                     )
