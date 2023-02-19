@@ -21,18 +21,24 @@ class _MyHomePageState extends State<MyHomePage>
   ReadData() async {
     await DefaultAssetBundle.of(context)
         .loadString("json/popularBooks.json")
-        .then((s) {
-      setState(() {
-        popularBooks = json.decode(s);
-      });
-    });
-    await DefaultAssetBundle.of(context)
-        .loadString("json/books.json")
-        .then((s) {
-      setState(() {
-        books = json.decode(s);
-      });
-    });
+        .then(
+      (s) {
+        setState(
+          () {
+            popularBooks = json.decode(s);
+          },
+        );
+      },
+    );
+    await DefaultAssetBundle.of(context).loadString("json/books.json").then(
+      (s) {
+        setState(
+          () {
+            books = json.decode(s);
+          },
+        );
+      },
+    );
   }
 
   @override
@@ -190,7 +196,8 @@ class _MyHomePageState extends State<MyHomePage>
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
                                         image: DecorationImage(
-                                            image: AssetImage(books[i]["img"])),
+                                          image: AssetImage(books[i]["img"]),
+                                        ),
                                       ),
                                     ),
                                     const SizedBox(
