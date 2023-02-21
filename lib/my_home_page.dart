@@ -95,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage>
                 height: 180,
                 child: Stack(
                   children: [
-                    Positioned(
+                    Positioned(       // In positioned at least one vertical parameter and atleast two horizontal parameter are required
                       top: 0,
                       left: -20,
                       right: 0,
