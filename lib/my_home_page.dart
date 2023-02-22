@@ -93,6 +93,7 @@ class _MyHomePageState extends State<MyHomePage>
               const SizedBox(height: 20),
               Container(
                 height: 180,
+                // Stack allows us to stack or overlap various widgets one above the other
                 child: Stack(
                   children: [
                     Positioned(       // In positioned at least one vertical parameter and atleast two horizontal parameter are required
