@@ -12,7 +12,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin {       // https://www.quora.com/What-does-SingleTickerProviderStateMixin-in-Flutter-do-Are-there-any-examples-of-when-to-use-it
   late List popularBooks;
   late List books;
   late ScrollController _scrollController;
@@ -132,6 +132,8 @@ class _MyHomePageState extends State<MyHomePage>
                       SliverAppBar(
                         pinned: true,
                         backgroundColor: AppColors.sliverBackground,
+
+                        //Creates a widget that has a preferred size that the parent can query. A space is can be left blank with respect to the parent widget.
                         bottom: PreferredSize(
                           preferredSize: const Size.fromHeight(50),
                           child: Container(
