@@ -1,0 +1,26 @@
+services:
+  app:
+    build: .
+    container_name: play_books
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - backend
+    depends_on:
+      - books_db
+    command: npm start
+
+  books_db:
+    image: mongo
+    container_name: books_db
+    ports:
+      - 27017:27017
+    volumes:
+      - C:\Users\Vighnesh\Flutter\Projects\audio_player\docker_volume_for_mongo:/data/db
+    networks:
+      - backend
+networks:
+  backend:

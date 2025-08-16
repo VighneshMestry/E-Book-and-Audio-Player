@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 });
 
 mongoose
-  .connect("mongodb://localhost:27017/database")
+  .connect("mongodb://books_db:27017/database")
   .then(() => console.log("MongoDB connected"))
   .catch((e) => console.log(e));
 
