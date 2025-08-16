@@ -31,7 +31,7 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-./books_server/node_modules/
+/books_server/node_modules/
 
 # Symbolication related
 app.*.symbols
